@@ -1,0 +1,120 @@
+//-------------------Variables--------------------//
+
+$blue: #727eb2;
+$turquoise: #37beaf;
+$orange: #fa895f;
+
+//-------------------Main--------------------//
+body {
+	font-family: 'Open Sans', sans-serif;
+	overflow-x: hidden;
+	.navbar {
+		padding: .5rem 0rem;
+		background-color: $blue;
+		.navbar-brand {
+			margin-left: 33px;
+			color: #fff;
+		}
+		.navbar-brand:hover {
+			color: #fff;
+		}	
+	}
+	.sidebar {
+		background-color: $turquoise;
+	    position: fixed;
+	    min-width: 100px;
+	    max-width: 100px;
+	    min-height: calc(100vh);
+	    transition: all 0.3s;
+	    z-index: 100;
+	    ul li {
+		    display: block;
+		    padding: .75rem 0rem;
+		    color: rgba(255, 255, 255, .75);
+		    text-decoration: none;
+		}
+	} 
+	.row {
+		margin-left: 4rem;
+		.content {
+		    width: 100%;
+		}
+		.white_block {
+		  	color: $turquoise;
+		  	height: auto;
+		  	text-transform: uppercase;
+		  	.map {
+			    padding: 0 1.2rem;
+			}
+		}
+		.orange_block {
+		  	background-color: $orange;
+		  	position: fixed;
+		  	height: 100vh;
+		  	right: 0;
+		}
+		img {
+		  display: block;
+		  width: 100%;
+		  max-width: 500px;
+		  height: auto;
+		  margin: 0 auto;
+		}
+	}
+}
+.sidebar-toggle {
+	padding-left: 1rem;
+	visibility: hidden;
+}
+.sidebar.toggled {
+	margin-left: -100px;
+} 
+
+//-------------------Media--------------------//
+@media (max-width: 768px) {
+	body {
+		.navbar {
+			.navbar-brand {
+				visibility: hidden;
+			}
+		}
+		.sidebar {
+			min-width: 50px;
+      		max-width: 50px;
+      		margin-left: -50px;
+		}
+		.row {
+			margin-left: 0;
+			.content p {
+			    padding: 0 1rem;
+			}
+			.white_block {
+			  	padding: 0;
+      			height: auto;
+			  	.map {
+				    padding: 0;
+				}
+			}
+			.orange_block {
+			  	position: static;
+			    min-height: 200px;
+			    height: auto;
+			}
+			img {
+			  display: block;
+			  width: 100%;
+			  max-width: 500px;
+			  height: auto;
+			  margin: 0 auto;
+			}
+		}
+	}
+	.sidebar-toggle {
+		position: absolute;
+		top: 4.5rem;
+		visibility: visible;
+	}
+	.sidebar.toggled {
+		margin-left: 0;
+	} 
+}
